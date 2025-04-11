@@ -1,10 +1,7 @@
 # Cookiecutter Jupyter Book
 
-![tests](https://github.com/executablebooks/cookiecutter-jupyter-book/workflows/tests/badge.svg)
-![deploy](https://github.com/executablebooks/cookiecutter-jupyter-book/workflows/deploy/badge.svg)
-[![release](https://img.shields.io/github/release/executablebooks/cookiecutter-jupyter-book.svg)](https://github.com/executablebooks/cookiecutter-jupyter-book/releases)
-[![python](https://img.shields.io/badge/python-3.8%2C%203.9%2C%203.10-blue)]()
-[![os](https://img.shields.io/badge/OS-Ubuntu%2C%20Mac%2C%20Windows-yellow)]()
+> Based on [cookiecutter-jupyter-book](https://github.com/executablebooks/cookiecutter-jupyter-book). This project made some minor
+> impovements to the GitHub workflow but is otherwise largely unmodified.
 
 <p align="center">
   <img src="{{cookiecutter.book_slug}}/{{cookiecutter.book_slug}}/logo.png" width="400">
@@ -40,16 +37,10 @@ my_book
 
 ## Usage
 
-1. Install [Cookiecutter](https://github.com/cookiecutter/cookiecutter/tree/1.7.2) if you haven't installed it yet:
+1. Use the Docker image supplied by the [cookiecutter project](https://github.com/RDI-lab/cookiecutter) to generate a Jupyter Book template and fill out the requested information (default templating values are shown in square brackets `[]` and will be used if no other information is entered):
 
 ```bash
-$ pip install -U cookiecutter jupyter-book
-```
-
-2. Use `cookiecutter-jupyter-book` to generate a Jupyter Book template and fill out the requested information (default templating values are shown in square brackets `[]` and will be used if no other information is entered):
-
-```bash
-$ cookiecutter git@github.com:executablebooks/cookiecutter-jupyter-book.git
+$ docker run -v .:/cookiecutter -it ghcr.io/rdi-lab/cookiecutter:latest https://github.com/RDI-lab/cookiecutter-jupyter-book.git
 
 author_name [Captain Jupyter]: Tomas Beuzen
 github_username [tomasbeuzen]:

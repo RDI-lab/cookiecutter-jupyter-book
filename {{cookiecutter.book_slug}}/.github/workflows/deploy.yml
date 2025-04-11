@@ -22,6 +22,8 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      actions: read 
+      contents: read 
     steps:
       - uses: actions/checkout@v4
 
@@ -38,6 +40,10 @@ jobs:
       # Build the book
       - name: Build the book
         run: jupyter-book build {{cookiecutter.book_slug}}
+
+      # Configure GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       # Upload the book's HTML as an artifact
       - name: Upload artifact
